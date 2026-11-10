@@ -1,0 +1,10 @@
+# The app lives in the balipra-store/ subdirectory.
+[build]
+  base = "balipra-store"
+  # Install dependencies first so the build tools (vite) are available.
+  command = "npm install && npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Build the TanStack Start server for Netlify instead of the default Cloudflare target.
+  NITRO_PRESET = "netlify"
